@@ -1,6 +1,6 @@
 resource "aws_subnet" "sub1" {
   vpc_id     = aws_vpc.demo-vpc.id
-  cidr_block = "10.0.0.0/26"
+  cidr_block = var.sub1_cidr
   map_public_ip_on_launch = "true"
   availability_zone = "ap-south-1a"
 
@@ -11,7 +11,7 @@ resource "aws_subnet" "sub1" {
 }
 resource "aws_subnet" "sub2" {
   vpc_id     = aws_vpc.demo-vpc.id
-  cidr_block = "10.0.0.64/26"
+  cidr_block = var.sub2_cidr
   map_public_ip_on_launch = "true"
   availability_zone = "ap-south-1b"
 
@@ -22,7 +22,7 @@ resource "aws_subnet" "sub2" {
 }
 resource "aws_subnet" "sub3" {
   vpc_id     = aws_vpc.demo-vpc.id
-  cidr_block = "10.0.0.128/26"
+  cidr_block = var.sub3_cidr
   availability_zone = "ap-south-1a"
 
   tags = {
@@ -32,7 +32,7 @@ resource "aws_subnet" "sub3" {
 }
 resource "aws_subnet" "sub4" {
   vpc_id     = aws_vpc.demo-vpc.id
-  cidr_block = "10.0.0.192/26"
+  cidr_block = var.sub4_cidr
   availability_zone = "ap-south-1b"
 
   tags = {
